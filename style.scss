@@ -1,0 +1,107 @@
+$colors: (
+  primary: #0a79df,
+  accent: #01cbc6,
+  font: #ffffff,
+);
+$fontsizes: (
+  fontone: 20px,
+);
+
+@function colors($colorName) {
+  @return map-get($colors, $colorName);
+}
+
+// body {
+//   //   background-color: map-get($map: $colors, $key: primary);
+
+//   //   shorthand notation
+//   background-color: map-get($colors, primary);
+
+//   //   set color by function
+//   background-color: colors(accent);
+
+//   color: map-get($colors, font);
+//   font-size: map-get($fontsizes, fontone);
+// }
+
+// Nesting 😎
+// main {
+//   height: 100%;
+//   p {
+//     color: colors(accent);
+//   }
+
+//   a {
+//     text-decoration: none;
+//   }
+// }
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  .container {
+    height: 100%;
+    width: 100%;
+    background-color: colors(primary);
+    // clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    position: absolute;
+    z-index: -1;
+  }
+  header {
+    a {
+      display: block;
+      text-align: center;
+      color: colors(font);
+      text-decoration: none;
+      font-size: 2rem;
+      padding: 14px;
+    }
+  }
+}
+
+main {
+  section#mainimage {
+    width: 80%;
+    background-color: colors(accent);
+    padding: 15px;
+    margin: 1em auto;
+    color: colors(font);
+    border-radius: 15px;
+    p {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      margin-bottom: -7px;
+      margin-top: 5px;
+    }
+  }
+
+  section#mainbutton {
+    color: colors(font);
+    padding: 15px;
+    text-align: center;
+
+    h1 {
+      font-size: 1.8rem;
+      margin: 5px;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+    }
+    a {
+      margin-top: 15px;
+      color: colors(font);
+      background-color: colors(accent);
+      padding: 5px 15px;
+      text-decoration: none;
+      font-size: 1.5em;
+      border-radius: 5px;
+    }
+  }
+}
